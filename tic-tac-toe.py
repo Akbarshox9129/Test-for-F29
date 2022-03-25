@@ -2,13 +2,6 @@ from PyQt5.QtWidgets import QApplication,QWidget
 from PyQt5.QtWidgets import QPushButton,QRadioButton,QMessageBox
 from PyQt5.QtGui import QFont
 import sys
-class Tugma(QPushButton):
-    def __init__(self,name,ob,x,y):
-        super().__init__(name,ob)
-        self.setFont(QFont("Times",40))
-        self.setGeometry(x,y,100,100)
-    def click(self,fun):
-        self.clicked.connect(fun)
 class Window(QWidget):
     def __init__(self):
         super().__init__()
@@ -206,6 +199,13 @@ class Window(QWidget):
             else:
                 self.x="X"
         self.scan()
+class Tugma(QPushButton):
+    def __init__(self,name,ob,x,y):
+        super().__init__(name,ob)
+        self.setFont(QFont("Times",40))
+        self.setGeometry(x,y,100,100)
+    def click(self,fun):
+        self.clicked.connect(fun)
 app=QApplication(sys.argv)
 oyna=Window()
 oyna.setWindowTitle("The GAME OF TIC-TAC-TOE")
