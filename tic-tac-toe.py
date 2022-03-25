@@ -13,6 +13,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
         self.setGeometry(200,200,600,600)
+        self.setFixedSize(600,600)
         self.begin()
         self.x=""
     def font(self,ob):
@@ -207,5 +208,6 @@ class Window(QWidget):
         self.scan()
 app=QApplication(sys.argv)
 oyna=Window()
+oyna.setWindowTitle("The GAME OF TIC-TAC-TOE")
 oyna.show()
 sys.exit(app.exec_())
